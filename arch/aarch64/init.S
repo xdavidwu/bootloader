@@ -11,12 +11,12 @@ cpu1:
 	cmp x1, x0
 	bne reloc
 	mov sp, x0
-/*	ldr x0, =__bss_start
+	ldr x0, =__bss_start
 	ldr x1, =__bss_end
 clear_bss:
 	str xzr, [x0], #8
 	cmp x0, x1
-	blo clear_bss*/
+	blo clear_bss
 	bl machine_init
 reloc:
 	ldr x2, =__whole_size
