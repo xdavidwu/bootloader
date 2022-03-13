@@ -29,7 +29,7 @@ void main(const struct uart_impl *uart, uint8_t *target,
 	const char *wait_initrd_msg = "Waiting for initrd\r\n";
 	while (*wait_initrd_msg) {
 		uart->putc(*wait_initrd_msg);
-		wait_msg++;
+		wait_initrd_msg++;
 	}
 	uint32_t initrd_sz = ((uint32_t)uart->getc() << 24) +
 		((uint32_t)uart->getc() << 16) +
@@ -37,7 +37,7 @@ void main(const struct uart_impl *uart, uint8_t *target,
 	const char *recv_initrd_msg = "Receiving initrd\r\n";
 	while (*recv_initrd_msg) {
 		uart->putc(*recv_initrd_msg);
-		recv_msg++;
+		recv_initrd_msg++;
 	}
 	while (initrd_sz--) {
 		*initrd_target = uart->getc();
