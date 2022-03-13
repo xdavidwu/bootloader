@@ -4,9 +4,10 @@ sources = [
   'arch/aarch64/init.S',
   'arch/aarch64/boot.S',
   'arch/aarch64/machines/rpi3.c',
+  'fdt.c',
+  'init.c',
   'uart/bcm2835_mini_uart.c',
   'uart/bcm2835_mini_uart.S',
-  'init.c',
 ]
 
 elf = executable('kernel8.elf',
