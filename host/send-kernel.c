@@ -6,6 +6,7 @@
 #include <unistd.h>
 
 static void write_or_abort(int fd, uint8_t byte) {
+	usleep(200);
 	if (write(fd, &byte, 1) != 1) {
 		perror("write");
 		exit(EXIT_FAILURE);
